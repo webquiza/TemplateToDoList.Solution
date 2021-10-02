@@ -1,4 +1,4 @@
-using MySql.Data.MySqlClient;
+/*using MySql.Data.MySqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using ToDoList.Models;
@@ -130,4 +130,4 @@ namespace ToDoList.Tests
       Assert.AreEqual(newItem, foundItem);
     }
   }
-}
+}*/ 
