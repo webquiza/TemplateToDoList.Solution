@@ -14,7 +14,7 @@ namespace ToDoList
     {
       var builder = new ConfigurationBuilder()
           .SetBasePath(env.ContentRootPath)
-              .AddJsonFile("appsettings.json");
+          .AddJsonFile("appsettings.json");
       Configuration = builder.Build();
     }
 
@@ -23,10 +23,10 @@ namespace ToDoList
     public void ConfigureServices(IServiceCollection services)
     {
       services.AddMvc();
-     
+
       services.AddEntityFrameworkMySql()
-          .AddDbContext<ToDoListContext>(options => options
-          .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
+        .AddDbContext<ToDoListContext>(options => options
+        .UseMySql(Configuration["ConnectionStrings:DefaultConnection"], ServerVersion.AutoDetect(Configuration["ConnectionStrings:DefaultConnection"])));
     }
 
     public void Configure(IApplicationBuilder app)
@@ -40,7 +40,7 @@ namespace ToDoList
       });
 
       app.UseStaticFiles();
-
+      
       app.Run(async (context) =>
       {
         await context.Response.WriteAsync("Hello World!");
